@@ -191,13 +191,15 @@ void speedSelect(){
             }   
     }
     void inputAnswer(){
-        char response[4];
+        char response[5]; //compiling using g++ -O3 --static shaves off the last char in the array. Changing array length to    5 corrects this
         int o1I1; //object 1, index 1 (contrals char, second [])
         int o1I2; //object 1, index 2 (controls int, first [])
         int o2I1; //object 2, index 1 (controls char, second[])
         int o2I2; //object 2, index 2 (controls int, first[])
         cout<<"Input 2 matching coordinate points (letter before number), without a space inbetween (e.g. a1b1 -> is valid, a1 b1->not valid)"<<endl<<endl<<"Input your coordinate point: "<<endl;
         cin>>response;
+        cout<<response[0]<<response[1]<<response[2]<<response[3]<<endl;
+        Sleep(10);
         switch(response[0]){ //int vals in ascii 3:
             case 65: o1I1=0; break; //assigns object 1 index 1 to 0
             case 97: o1I1=0; break; //assigns object 1 index 1 to 0 
@@ -217,7 +219,7 @@ void speedSelect(){
             case 104: o1I1=7; break; //...
             default:
                 cout<<"That's an invalid response! Try again (incorrect first letter)"<<endl;
-                inputAnswer();
+                goto recurse;
                 break;
         };
         switch(response[1]){ //int vals in ascii 3:
@@ -231,7 +233,7 @@ void speedSelect(){
             case 56: o1I2=7; break;
             default:
                 cout<<"That's an invalid response! Try again (incorrect first int)"<<endl;
-                inputAnswer();
+                goto recurse;
                 break;
         };
         switch(response[2]){ //int vals in ascii 3:
@@ -253,7 +255,7 @@ void speedSelect(){
             case 104: o2I1=7; break; //...
             default:
                 cout<<"That's an invalid response! Try again (incorrect second letter)"<<endl;
-                inputAnswer();
+                goto recurse;
                 break;
         };
         switch(response[3]){ //int vals in ascii 3:
@@ -267,8 +269,7 @@ void speedSelect(){
             case 56: o2I2=7; break;
             default:
                 cout<<"That's an invalid response! Try again (incorrect 2nd int)"<<endl;
-                cout<<response[3]<<endl;
-                inputAnswer();
+                goto recurse;
                 break;
             };
         if (o1I1==o2I1 and o1I2==o2I2){
@@ -298,6 +299,11 @@ void speedSelect(){
             wrongAnswers++;
             return;
         }
+
+        recurse:
+        gameArrayIn[o1I1][o1I2].hide();
+        gameArrayIn[o2I1][o2I2].hide();
+        inputAnswer();
     }
 
     
