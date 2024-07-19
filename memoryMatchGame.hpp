@@ -190,9 +190,6 @@ void speedSelect(){
                 }
             }   
     }
-    void postAnswer(){
-        
-    }
     void inputAnswer(){
         char response[4];
         int o1I1; //object 1, index 1 (contrals char, second [])
