@@ -198,7 +198,6 @@ void speedSelect(){
         int o2I2; //object 2, index 2 (controls int, first[])
         cout<<"Input 2 matching coordinate points (letter before number), without a space inbetween (e.g. a1b1 -> is valid, a1 b1->not valid)"<<endl<<endl<<"Input your coordinate point: "<<endl;
         cin>>response;
-        cout<<response[0]<<response[1]<<response[2]<<response[3]<<endl;
         Sleep(10);
         switch(response[0]){ //int vals in ascii 3:
             case 65: o1I1=0; break; //assigns object 1 index 1 to 0
