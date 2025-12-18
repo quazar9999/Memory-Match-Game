@@ -1,4 +1,4 @@
-### ***This project is for my CIS 250 project :3***
+### ***This project is for my CIS 250 project***
 
 The specifications for this Repo are listed [here](https://docs.google.com/document/d/1OTRU8th9h3Fdv6firMD8GJ20_GIaiDHi/edit?usp=sharing&ouid=100587205502334378828&rtpof=true&sd=true).
 
